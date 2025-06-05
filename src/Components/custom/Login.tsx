@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Input } from "../ui/Input";
 import { Button } from "../ui/Button";
 import { Link } from "react-router";
+import { toast } from "react-hot-toast";
+import { validateEmail, validatePassword } from "../validators";
 
 export function Login() {
   const [username, setUsername] = useState("");
@@ -10,7 +12,15 @@ export function Login() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ username, password, rememberMe });
+
+    const isEmailValid = validateEmail(username);
+    const isPasswordValid = validatePassword(password);
+
+    if (isEmailValid && isPasswordValid) {
+      toast.success("Login successful!");
+      console.log({ username, password, rememberMe });
+    }
+    console.log("Logged in");
   };
 
   return (

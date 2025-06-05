@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Input } from "../ui/Input";
 import { Button } from "../ui/Button";
 import { Link } from "react-router";
+import toast from "react-hot-toast";
 
 export function Register() {
   const [role, setRole] = useState("customer");
@@ -22,7 +23,13 @@ export function Register() {
         shipment tracking, and more.
       </p>
 
-      <form className="space-y-2 text-left">
+      <form
+        className="space-y-2 text-left"
+        onSubmit={(e) => {
+          e.preventDefault();
+          toast.success("Registered successfully! 🎉");
+        }}
+      >
         <div>
           <label className="text-sm font-medium">Username *</label>
           <Input type="text" required />

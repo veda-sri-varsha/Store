@@ -22,3 +22,23 @@
   }
   
 }
+
+.custom-toast {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  padding: 12px 16px;
+  border-radius: 0.5rem;
+  font-size: 0.875rem; 
+  font-family: var(--font-sans);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.custom-toast-success {
+  background-color: #4ade80; 
+  color: var(--color-background);
+}
+
+.custom-toast-error {
+  background-color: #f87171; 
+  color: var(--color-background);
+}
