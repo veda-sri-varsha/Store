@@ -1,9 +1,9 @@
-import AppRouter from "./routers";
+// import AppRouter from "./routers";
 
 export default function App() {
   return (
    <>
-   <AppRouter/>
+   {/* <AppRouter/> */}
    </>
   )
 }
