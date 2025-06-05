@@ -1,0 +1,1 @@
+//password-@ 8char min -A,  first,last 2 char if not give toast 

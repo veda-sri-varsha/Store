@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: "Inter", sans-serif;
+  --color-primary: #634c9f;
+  --color-background: #ffffff;
+  --color-foreground: #1a1a1a;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+}
