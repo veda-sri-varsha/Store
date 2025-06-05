@@ -5,6 +5,7 @@
   --color-primary: #634c9f;
   --color-background: #ffffff;
   --color-foreground: #1a1a1a;
+  --color-secondary:#D1D5DB;
 }
 
 @layer base {
@@ -19,4 +20,5 @@
   .bg-primary {
     background-color: var(--color-primary);
   }
+  
 }

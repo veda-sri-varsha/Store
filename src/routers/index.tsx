@@ -1,20 +1,8 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router";
-
-import ReactDOM from "react-dom/client";
+import { createBrowserRouter } from "react-router";
 import LoginPage from "../pages/LoginPage";
+import RegisterPage from "../pages/RegisterPage";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <LoginPage/>
-  },
+export const router = createBrowserRouter([
+  { path: "/", element: <LoginPage /> },
+  { path: "/register", element: <RegisterPage /> },
 ]);
-
-const root = document.getElementById("root")!;
-
-ReactDOM.createRoot(root).render(
-  <RouterProvider router={router} />
-);
