@@ -42,9 +42,9 @@
     color: var(--color-linkedin);
   }
 
-  .bg-primary {
-    background-color: var(--color-primary);
-  }
+  /* .bg-primary {
+    color: var(--color-primary);
+  } */
 }
 
 .custom-toast {

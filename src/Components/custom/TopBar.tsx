@@ -84,7 +84,7 @@ const TopBar: React.FC = () => {
             </Link>
             <span>
               We deliver every day from{" "}
-              <span className="text-[#f25321]">7:00 to 23:00</span>
+              <span className="text-[#f25321] font-bold ">7:00 to 23:00</span>
             </span>
           </div>
 
@@ -118,10 +118,12 @@ const TopBar: React.FC = () => {
                   JinStore
                 </span>
               </div>
-              <div className="hidden md:flex items-center gap-1 text-sm text-gray-700 ml-4">
-                <MapPin className="w-5 h-5" />
-                <span>Deliver to</span>
-                <span className="font-semibold">All</span>
+              <div className="hidden md:flex items-start gap-1 text-sm text-gray-700 ml-4">
+                <MapPin className="w-5 h-5 mt-1" />
+                <div className="flex flex-col leading-tight">
+                  <span>Deliver to</span>
+                  <span className="font-semibold">all</span>
+                </div>
               </div>
             </div>
 

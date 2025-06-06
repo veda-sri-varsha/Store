@@ -6,7 +6,6 @@ export default function NewsLetter() {
      <footer className="bg-[#F3F4F6] border-t border-none">
       <div className="py-3 px-4 mb-8 m-20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-20">
-          {/* Left: Heading and description */}
           <div className="md:w-1/2 mr-20">
             <h3 className="font-semibold mb-2 text-gray-800 ">
               Join our newsletter for £10 offs
@@ -17,7 +16,6 @@ export default function NewsLetter() {
             </p>
           </div>
 
-          {/* Right: Form and note */}
           <div className="md:w-1/2">
             <form className="flex w-full max-w-md">
               <div className="relative flex-grow">
