@@ -7,7 +7,7 @@ export default function Header() {
       <TopBar />
 
       <div className="flex items-center justify-between px-16 py-2 border-b border-blue-100 font-sans">
-        <div className="flex items-center space-x-6 text-sm font-medium text-gray-800">
+        <div className="flex items-center space-x-6 text-sm font-medium text-black">
           {[
             "Home",
             "Shop",

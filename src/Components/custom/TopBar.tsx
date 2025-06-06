@@ -150,7 +150,7 @@ const TopBar: React.FC = () => {
                 <User size={20} />
                 <div className="flex flex-col">
                   <span className="text-sm">Sign In</span>
-                  <span className="text-xs">Account</span>
+                  <span className="text-xs font-semibold">Account</span>
                 </div>
               </Link>
               <button className="relative text-gray-600 hover:text-purple-600 ">

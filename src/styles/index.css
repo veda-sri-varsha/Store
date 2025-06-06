@@ -5,7 +5,12 @@
   --color-primary: #634c9f;
   --color-background: #ffffff;
   --color-foreground: #1a1a1a;
-  --color-secondary:#D1D5DB;
+  --color-secondary: #d1d5db;
+
+  --color-facebook: #1877f2;
+  --color-twitter: #1da1f2;
+  --color-instagram: #e1306c;
+  --color-linkedin: #0a66c2;
 }
 
 @layer base {
@@ -20,7 +25,26 @@
   .bg-primary {
     background-color: var(--color-primary);
   }
-  
+
+  .text-facebook {
+    color: var(--color-facebook);
+  }
+
+  .text-twitter {
+    color: var(--color-twitter);
+  }
+
+  .text-instagram {
+    color: var(--color-instagram);
+  }
+
+  .text-linkedin {
+    color: var(--color-linkedin);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
 }
 
 .custom-toast {
@@ -28,17 +52,17 @@
   color: var(--color-background);
   padding: 12px 16px;
   border-radius: 0.5rem;
-  font-size: 0.875rem; 
+  font-size: 0.875rem;
   font-family: var(--font-sans);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .custom-toast-success {
-  background-color: #4ade80; 
+  background-color: #4ade80;
   color: var(--color-background);
 }
 
 .custom-toast-error {
-  background-color: #f87171; 
+  background-color: #f87171;
   color: var(--color-background);
 }
