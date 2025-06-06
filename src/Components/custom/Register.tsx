@@ -3,14 +3,35 @@ import { Input } from "../ui/Input";
 import { Button } from "../ui/Button";
 import { Link } from "react-router";
 import toast from "react-hot-toast";
+import {
+  validateUsername,
+  validateEmail,
+  validatePassword,
+} from "../validators";
 
 export function Register() {
   const [role, setRole] = useState("customer");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const isUsernameValid = validateUsername(username);
+    const isEmailValid = validateEmail(email);
+    const isPasswordValid = validatePassword(password);
+
+    if (isUsernameValid && isEmailValid && isPasswordValid) {
+      toast.success("Registered successfully! 🎉");
+    }
+  };
 
   return (
-    <div className="max-w-md mx-auto px-6 py-5 bg-white rounded-lg m-10 ">
+    <div className="max-w-md mx-auto px-6 py-5 bg-white rounded-lg m-10">
       <div className="mb-6 flex justify-center gap-4 text-lg font-semibold">
-        <Link to="/">
+        <Link to="/login">
           <span className="text-gray-400">Login</span>
         </Link>
         <span className="text-primary border-b-2 border-primary pb-1">
@@ -23,26 +44,35 @@ export function Register() {
         shipment tracking, and more.
       </p>
 
-      <form
-        className="space-y-2 text-left"
-        onSubmit={(e) => {
-          e.preventDefault();
-          toast.success("Registered successfully! 🎉");
-        }}
-      >
+      <form onSubmit={handleSubmit} className="space-y-2 text-left">
         <div>
           <label className="text-sm font-medium">Username *</label>
-          <Input type="text" required />
+          <Input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
         </div>
 
         <div>
           <label className="text-sm font-medium">Email address *</label>
-          <Input type="email" required />
+          <Input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </div>
 
         <div>
           <label className="text-sm font-medium">Password *</label>
-          <Input type="password" required />
+          <Input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
         </div>
 
         <div className="space-y-2 mt-2 text-[14px]">
