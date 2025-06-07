@@ -201,7 +201,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex gap-4 mt-4 items-center">
+          <div className="gap-4 mt-4 items-center hidden md:flex">
             {[
               { src: "/src/assets/visa.png", alt: "Visa" },
               { src: "/src/assets/Mastercard-logo.png", alt: "Mastercard" },
