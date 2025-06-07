@@ -25,7 +25,7 @@ export default function NewsLetter() {
                 <input
                   type="email"
                   placeholder="Enter your email address"
-                  className="pl-10 pr-3 p-3 border border-gray-300 rounded-l-md focus:outline-none w-full"
+                  className="pl-10 pr-3 p-3 border border-gray-300 rounded-l-md focus:outlinenone w-full"
                 />
               </div>
               <button

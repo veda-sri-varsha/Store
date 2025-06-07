@@ -107,16 +107,18 @@ const TopBar: React.FC = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="flex items-center">
-                <div className="w-10 h-10 flex items-center justify-center text-purple-600 font-bold text-lg">
-                  <img
-                    src={Logo}
-                    alt="Logo"
-                    className="w-17 h-17 object-contain"
-                  />
-                </div>
-                <span className="text-xl font-bold text-gray-800">
-                  JinStore
-                </span>
+                <Link to="/" className="flex items-center gap-2 cursor-pointer">
+                  <div className="w-10 h-10 flex items-center justify-center">
+                    <img
+                      src={Logo}
+                      alt="Logo"
+                      className="w-10 h-10 object-contain"
+                    />
+                  </div>
+                  <span className="text-xl font-bold text-gray-800">
+                    JinStore
+                  </span>
+                </Link>
               </div>
               <div className="hidden md:flex items-start gap-1 text-sm text-gray-700 ml-4">
                 <MapPin className="w-5 h-5 mt-1" />
