@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Input } from "../ui/Input";
 import { Button } from "../ui/Button";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { toast } from "react-hot-toast";
 import { validateEmail, validatePassword } from "../validators";
 import { Eye, EyeOff } from "lucide-react";
@@ -11,6 +11,7 @@ export function Login() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,6 +22,11 @@ export function Login() {
     if (isEmailValid && isPasswordValid) {
       toast.success("Login successful!");
       console.log({ username, password, rememberMe });
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
+    } else {
+      toast.error("Invalid email or password");
     }
     console.log("Logged in");
   };
