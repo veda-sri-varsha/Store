@@ -39,7 +39,7 @@ export function Login() {
           </Link>
         </div>
 
-        <p className="mb-6 text-center font-[500] text-[13px] text-[#030712] whitespace-nowrap">
+        <p className="text-center font-[500] text-sm text-[#030712] mb-4 sm:whitespace-nowrap whitespace-normal sm:text-[13px] px-3 sm:px-0 leading-relaxed">
           If you have an account, sign in with your username or email address.
         </p>
 

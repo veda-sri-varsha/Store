@@ -47,14 +47,15 @@ const TopBar: React.FC = () => {
   return (
     <div className="w-full font-sans">
       <div className="bg-primary text-white py-2 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-50  text-sm text-center">
-          <span>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-30 text-sm text-center">
+          <span className="block md:inline">
             FREE delivery & 15% Discount for best 3 orders! Place your 1st order
             in
           </span>
-          <div className="flex items-center gap-2">
+
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 font-bold mt-2 md:mt-0">
             <span>Until the end of the sale:</span>
-            <div className="flex items-center gap-1.5 font-bold">
+            <div className="flex items-center gap-1.5">
               <div>{timeLeft.days.toString().padStart(2, "0")}</div>
               <span>days</span>
               <div>{timeLeft.hours.toString().padStart(2, "0")}</div>
@@ -70,9 +71,19 @@ const TopBar: React.FC = () => {
         </div>
       </div>
 
-      <header className="bg-white shadow-sm text-xs text-[#6B7280] font-sans cursor-pointer border border-[#e6e7eb]">
-        <div className="max-w-7xl mx-auto px-3 py-2 flex flex-wrap justify-between items-center">
-          <div className="flex flex-wrap items-center gap-4">
+      <header className="bg-white shadow-sm text-xs text-[#6B7280] font-sans border border-[#e6e7eb] cursor-pointer">
+        <div className="max-w-7xl mx-auto px-4 py-2 flex flex-row flex-wrap justify-between items-center gap-4">
+          <div className="flex flex-col sm:hidden w-full items-center gap-2 text-center">
+            <span className="text-sm">
+              We deliver every day from{" "}
+              <span className="text-[#f25321] font-bold">7:00 to 23:00</span>
+            </span>
+            <Link to="/track" className="hover:text-primary">
+              Order Tracking
+            </Link>
+          </div>
+
+          <div className="hidden sm:flex flex-row flex-wrap items-center gap-4">
             <Link to="/about" className="hover:text-primary">
               About Us
             </Link>
@@ -82,20 +93,22 @@ const TopBar: React.FC = () => {
             <Link to="/wishlist" className="hover:text-primary">
               Wishlist
             </Link>
-            <span>
+            <span className="text-sm">
               We deliver every day from{" "}
-              <span className="text-[#f25321] font-bold ">7:00 to 23:00</span>
+              <span className="text-[#f25321] font-bold">7:00 to 23:00</span>
             </span>
           </div>
 
-          <div className="flex items-center gap-4 mt-2 sm:mt-0 text-secondary">
-            <span className="flex items-center gap-1">
-              English <ChevronDown size={14} className="mt-[1px]" />
-            </span>
-            <span className="flex items-center gap-1">
-              USD <ChevronDown size={14} className="mt-[1px]" />
-            </span>
-            <Link to="/track" className="hover:text-primary">
+          <div className="hidden sm:flex flex-row items-center gap-4">
+            <div className="flex items-center gap-1">
+              <span>English</span>
+              <ChevronDown size={14} className="mt-[1px]" />
+            </div>
+            <div className="flex items-center gap-1">
+              <span>USD</span>
+              <ChevronDown size={14} className="mt-[1px]" />
+            </div>
+            <Link to="/track" className="hover:text-purple-600">
               Order Tracking
             </Link>
           </div>
@@ -157,13 +170,13 @@ const TopBar: React.FC = () => {
                   <span className="text-xs font-semibold">Account</span>
                 </div>
               </Link>
-              <button className="relative text-gray-600 hover:text-purple-600 ">
+              <button className="relative text-gray-600 hover:text-purple-600 cursor-pointer">
                 <Heart size={20} />
                 <span className="absolute -top-2 left-3 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   3
                 </span>
               </button>
-              <button className="relative text-gray-600 hover:text-purple-600">
+              <button className="relative text-gray-600 hover:text-purple-600 cursor-pointer">
                 <ShoppingCart size={20} />
                 <span className="absolute -top-2.5 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   0
