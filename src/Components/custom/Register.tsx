@@ -4,6 +4,8 @@ import { Button } from "../ui/Button";
 import { Link } from "react-router";
 import toast from "react-hot-toast";
 import { Eye, EyeOff } from "lucide-react";
+import { useNavigate } from "react-router";
+
 import {
   validateUsername,
   validateEmail,
@@ -15,8 +17,8 @@ export function Register() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const[showPassword,setShowPassword] = useState(false);
-
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,6 +29,12 @@ export function Register() {
 
     if (isUsernameValid && isEmailValid && isPasswordValid) {
       toast.success("Registered successfully! 🎉");
+      navigate("/");
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
+    } else {
+      toast.error("Please enter valid details.");
     }
   };
 
@@ -67,24 +75,24 @@ export function Register() {
           />
         </div>
 
-     <div>
-            <label className="block text-sm font-medium mb-1">Password *</label>
-            <div className="relative">
-              <Input
-                type={showPassword ? "text" : "password"}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword((prev: boolean) => !prev)}
-                className="absolute text-gray-400 right-3 top-1/2 transform -translate-y-1/2"
-              >
-                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-              </button>
-            </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Password *</label>
+          <div className="relative">
+            <Input
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword((prev: boolean) => !prev)}
+              className="absolute text-gray-400 right-3 top-1/2 transform -translate-y-1/2"
+            >
+              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            </button>
           </div>
+        </div>
 
         <div className="space-y-2 mt-2 text-[14px]">
           <label className="flex items-center gap-2">
