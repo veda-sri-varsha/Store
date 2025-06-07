@@ -4,10 +4,12 @@ import { Button } from "../ui/Button";
 import { Link } from "react-router";
 import { toast } from "react-hot-toast";
 import { validateEmail, validatePassword } from "../validators";
+import { Eye, EyeOff } from "lucide-react";
 
 export function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -58,12 +60,21 @@ export function Login() {
 
           <div>
             <label className="block text-sm font-medium mb-1">Password *</label>
-            <Input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            <div className="relative">
+              <Input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev: boolean) => !prev)}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 "
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
           </div>
 
           <div className="flex items-center justify-between text-sm">
